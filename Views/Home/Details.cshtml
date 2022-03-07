@@ -1,0 +1,77 @@
+﻿@model IEnumerable<MyRentApp_1.Models.apartmani>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div>
+
+   
+        @foreach (var item in Model)
+        {
+
+            <h2>
+                @Html.DisplayFor(modelItem => item.naziv)
+            </h2>
+
+
+
+            <h5>
+                @Html.DisplayFor(modelItem => item.opis)
+            </h5>
+
+
+
+            <div>
+                <img src="@Html.DisplayFor(modelItem => item.slikaURL)" width="550" />
+            </div>
+
+
+
+            <h5>
+                @Html.DisplayFor(modelItem => item.cijena)
+            </h5>
+
+
+
+            <div>
+                Ocijena:<span style="color:gold">@UserHelperMethods.GetSomeStar(item.ocijena)</span>
+            </div>
+
+
+
+            <div>
+                Grad: @Html.DisplayFor(modmodelItemel => item.Grad)
+            </div>
+
+
+            <div>
+                Adresa: @Html.DisplayFor(modelItem => item.Adresa)
+            </div>
+
+
+        }
+    
+</div>
+<hr />
+<p>
+    @Html.ActionLink("Nazad na Apartmane", "Apartmani")
+</p>
+@functions{
+    public static string GetSomeStar_local(object i)
+    {
+        int s = Convert.ToInt32(i); ;
+        string star = "⭐";
+        string html = "";
+
+        for (int x=0;x<s;x++)
+        {
+            html = html + star;
+        }
+
+        return html.ToString();
+    }
+}

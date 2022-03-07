@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="myRent_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="apartmani">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naziv" Type="nvarchar(max)" />
+    <Property Name="opis" Type="nvarchar(max)" />
+    <Property Name="slikaURL" Type="nvarchar(max)" />
+    <Property Name="cijena" Type="money" />
+    <Property Name="ocijena" Type="int" />
+    <Property Name="Grad" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adresa" Type="nvarchar" MaxLength="50" />
+    <Property Name="datum" Type="datetime" />
+    <Property Name="SEO_Url" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="myRent_dbModelStoreContainer">
+    <EntitySet Name="apartmani" EntityType="Self.apartmani" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

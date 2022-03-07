@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MyRentApp_1.Models.apartmani>
+
+@{
+    ViewBag.Title = "Apartmani";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .zoom {
+        transition: transform .2s; /* Animation */
+        margin: 0 auto;
+        padding-bottom: 15px;
+        height: 199px;
+    }
+
+        .zoom:hover {
+            transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        }
+</style>
+<h2>Apartmani</h2>
+
+@using (Html.BeginForm())
+{
+
+
+    <div class="input-group col-md-4" style="padding:15px;">
+        @Html.TextBox("SearchString", "", new { @type = "text", @class = "form-control", @placeholder = "Traži po nazivu" })
+        <span class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </span>
+    </div>
+
+}
+
+<div class="container">
+
+    @{int i = 0;}
+    @foreach (var item in Model)
+    {
+        i++;
+        if (i % 3 == 0)
+        {
+            @:<div class="row">
+            }
+            <div class="col-lg-4">
+
+                <div class="card">
+                    <a href="/Home/Details/@Html.DisplayFor(modelItem => item.SEO_Url) ">
+                        <div class="zoom">
+                            <img src="@item.slikaURL" class="card-img-top" width="300" alt="@Html.DisplayFor(modelItem => item.naziv)">
+                        </div>
+                    </a>
+
+                    <div class="card-body">
+                        <h3>@Html.DisplayFor(modelItem => item.naziv)</h3>
+                        <p class="card-text">Ocijena: @UserHelperMethods.GetSomeStar(item.ocijena)</p>
+                        <p class="card-text">Cijena: @Html.DisplayFor(modelItem => item.cijena)</p>
+                    </div>
+                </div>
+            </div>
+            if (i % 3 == 0)
+            {
+            @:</div>
+        }
+    }
+</div>

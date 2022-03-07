@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="myRent_dbModelStoreContainer" CdmEntityContainer="myRent_dbEntities">
+    <EntitySetMapping Name="apartmani">
+      <EntityTypeMapping TypeName="myRent_dbModel.apartmani">
+        <MappingFragment StoreEntitySet="apartmani">
+          <ScalarProperty Name="SEO_Url" ColumnName="SEO_Url" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="naziv" ColumnName="naziv" />
+          <ScalarProperty Name="opis" ColumnName="opis" />
+          <ScalarProperty Name="slikaURL" ColumnName="slikaURL" />
+          <ScalarProperty Name="cijena" ColumnName="cijena" />
+          <ScalarProperty Name="ocijena" ColumnName="ocijena" />
+          <ScalarProperty Name="Grad" ColumnName="Grad" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="datum" ColumnName="datum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

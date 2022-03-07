@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="myRent_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="apartmani">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="naziv" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="opis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="slikaURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cijena" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ocijena" Type="Int32" />
+    <Property Name="Grad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="datum" Type="DateTime" Precision="3" />
+    <Property Name="SEO_Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="myRent_dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="apartmani" EntityType="Self.apartmani" />
+  </EntityContainer>
+</Schema>
